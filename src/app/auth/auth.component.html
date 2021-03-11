@@ -1,0 +1,62 @@
+<app-alert [message]="error"  
+*ngIf ="error" 
+(close)="onHandleError()"></app-alert>
+
+
+
+<section class="Form ">
+  <div class="container">
+  <div class="row ">  
+      <div class=" col-xs-12 col-md-5 col-lg-5 ">
+          <img src="assets\image\joseph-gonzalez-fdlZBWIP0aM-unsplash.jpg" class="img-fluid">
+      </div>
+  
+      <div class="col-xs-11 col-md-6 col-lg-5 ">
+  
+          <div class="card">
+              <h3 class="card-title">Welcome to  {{isLoginMode ? " LogIn" : "SignUp"}}</h3>
+          </div>
+     
+  
+            <form #authForm="ngForm" (ngSubmit) = "onSubmit(authForm)" *ngIf="!isloading">
+                <div class="form-group">
+                    
+                    <label for="email">E-Mail</label>
+                        <input type="email" 
+                        id ="email" 
+                        class="form-control"
+                        placeholder="example@gmail.com"
+                        ngModel
+                        name ="email"
+                        required
+                        email>
+              </div>
+                <div class="form-group">
+  
+                    <label for="password">password</label>
+                        <input type="password" 
+                        id ="password"
+                        class="form-control"
+                        placeholder="*********"
+                        ngModel
+                        name ="password"
+                        required
+                        minlength="6">
+                  </div>
+    
+                <div class=" col-lg-7">
+                    <button class="btn btn-success" 
+                    type ="submit" [disabled]="!authForm.valid">
+                    {{isLoginMode ? " LogIn" : "SignUp"}}</button> |
+        
+                    <button class="btn btn-primary" (click)= "onSwitchMode()" 
+                    type="button">Switch to {{isLoginMode ?'SignUp': 'LogIn'}} </button>
+                </div>
+               
+                
+    
+            </form>
+        </div>
+    </div>
+  </div>
+  </section>

@@ -1,0 +1,31 @@
+
+*{
+
+  box-sizing: border-box;
+}
+
+
+.row{
+  border-radius: 30px;
+}
+section{
+background: rgb(248, 248, 248);
+}
+
+
+@media only screen and (min-width: 600px) {
+  img {
+    width: 96%;
+    height: 40%;
+    /* background-size: cover; */
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  img {
+    width:0 ;
+    height:0 ;
+   
+  }
+}
